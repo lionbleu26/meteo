@@ -4,20 +4,20 @@ Application web simple et élégante pour consulter la météo actuelle et les p
 
 ---
 
-## 🚀 Démo en ligne
+##  Démo en ligne
 
 🔗 **[Voir l'application](https://applimeteo-five.vercel.app/)**
 
 ---
 
-## ✨ Fonctionnalités
+##  Fonctionnalités
 
-- 🔍 **Recherche par ville** : Entrez n'importe quelle ville du monde
-- 🌡️ **Météo actuelle** : Température, ressenti, description
-- 📅 **Prévisions 3 jours** : Anticipez la météo à venir
-- 🎨 **Fond d'écran dynamique** : Change selon les conditions météo
-- 📱 **Responsive** : Fonctionne sur mobile, tablette et desktop
-- ⏰ **Date et heure** : Affichage en temps réel
+-  **Recherche par ville** : Entrez n'importe quelle ville du monde
+-  **Météo actuelle** : Température, ressenti, description
+-  **Prévisions 3 jours** : Anticipez la météo à venir
+-  **Fond d'écran dynamique** : Change selon les conditions météo
+-  **Responsive** : Fonctionne sur mobile, tablette et desktop
+-  **Date et heure** : Affichage en temps réel
 
 ---
 
@@ -31,7 +31,7 @@ Application web simple et élégante pour consulter la météo actuelle et les p
 
 ---
 
-## 📸 Aperçu
+## Aperçu
 
 ### Interface principale
 
