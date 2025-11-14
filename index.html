@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>metéo</title>
+    <link rel="stylesheet" href="meteo.css" />
+    <script src="meteo.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <!-- infos meteo, la temperature, le nom de la ville et l'etat du ciel   -->
+      <section class="infoMeteo">
+        <div class="temperatureEtEtatDuCiel">
+          <!-- js -> la température et l'image en fonction du temps -->
+          <p id="temperature"></p>
+          <div class="logoEtCiel">
+            <div id="imgCiel"></div>
+            <!-- js <-> temps (nuageux, ensoleillé ) -->
+            <p id="tempsDuCiel"></p>
+          </div>
+        </div>
+
+        <!-- js -> nom de la ville -->
+        <div>
+          <p id="nomDeVille">➷ Entrer le nom d'une ville ⬇</p>
+          <!-- js -> pays -->
+          <p id="pays"></p>
+        </div>
+        <!-- Taper nom de la ville  -->
+        <div class="zoneBouton">
+          <input type="text" id="nomVille" placeholder="       Recherche " />
+          <!-- btn validation -->
+          <button>🔎</button>
+        </div>
+      </section>
+
+      <section class="blocDroiteJour">
+        <!-- js -> date aujourd'hui -->
+        <h2 id="jourAujourdhui"></h2>
+        <div class="dateEtMois">
+          <p id="dateAjd"></p>
+          <p id="moisEnCours"></p>
+        </div>
+      </section>
+    </header>
+
+    <footer>
+      <div class="titre">
+        <div class="temperatureMinEtMax">
+          <!-- js -> température max -->
+          <img src="icone\basse.png" alt="temperature haute" />
+          <h3 class="temperaturemin">Température min</h3>
+          <p id="resulTemperatureMin"></p>
+        </div>
+        <div class="temperatureMax">
+          <!-- js -> températture min  -->
+          <img src="icone\haute.png" alt="temperature basse" />
+          <h3 class="temperaturemax">Température max</h3>
+          <p id="resulTemperatureMax"></p>
+        </div>
+        <h2>3 prochain jours</h2>
+      </div>
+
+      <!-- section qui va avoir tout les detail de la meteo  -->
+      <section class="blocDetailMeteo">
+        <!-- js -> ressentie -->
+        <div>
+   
+
+          <div class="detail">
+            <img src="icone\ressenti.png" alt="temperature ressentie" />
+            <p class="detailMeteo">Ressentie</p>
+            <p id="ressentie"></p>
+          </div>
+
+          <div class="detail">
+            <!-- js -> Humidité -->
+            <img src="icone\humidite.png" alt="Humidité" />
+            <p class="detailMeteo">Humidité</p>
+            <p id="humidite"></p>
+          </div>
+        </div>
+        <div class="blocBasDeLaPage">
+       
+          <div class="detail">
+            <!-- js -> Visibilité -->
+            <img src="icone\yeux.png" alt="Visibilité" />
+            <p class="detailMeteo">Visibilité</p>
+            <p id="visibilite"></p>
+          </div>
+
+          <div class="detail">
+            <!-- js -> vitesse du vent -->
+            <img src="icone\vent.png" alt="Vent" />
+            <p class="detailMeteo">Vent</p>
+            <p id="vent"></p>
+          </div>
+        </div>
+
+        <section class="meteoProchainJour">
+          <!-- js -> Meteo jour 1  -->
+          <div class="nextDay">
+            <h3 id="jour1"></h3>
+            <div id="iconJour1"></div>
+            <!-- <img src="icone\soleilEtNuage.png" class="imgJour" /> -->
+            <!-- div qui prend les temperature min et max pour les mettre ensemble  -->
+            <div class="prochainJour">
+              <p id="temperatureMinJour1"></p>
+            </div>
+          </div>
+          <div class="nextDay">
+            <!-- js -> Meteo jour 2  -->
+            <h3 id="jour2"></h3>
+            <div id="iconJour2"></div>
+            <!-- <img src="icone\pluie.png" class="imgJour" /> -->
+            <div class="prochainJour">
+              <p id="temperatureMinJour2"></p>
+            </div>
+          </div>
+          <div class="nextDay">
+            <!-- js -> Meteo jour 3  -->
+            <h3 id="jour3"></h3>
+            <div id="iconJour3"></div>
+            <!-- <img src="icone\soleilEtNuage.png" class="imgJour" /> -->
+            <div class="prochainJour">
+              <p id="temperatureMinJour3"></p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </footer>
+  </body>
+</html>

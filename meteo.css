@@ -1,0 +1,346 @@
+body {
+  background: url(fond_ecran/DEFAUT.jpg) no-repeat center fixed;
+
+  /* Centre l'image horizontalement et verticalement */
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+/* pour afficher en bas de la page le footer  */
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/*******************************
+
+
+/*Bloc qui contient les texte */
+.infoMeteo {
+  display: flex;
+  flex-direction: column;
+
+  height: 260px;
+  padding-left: 20px;
+  padding-top: 30px;
+  min-width: 280px;
+  background-color: rgba(52, 51, 51, 0.4);
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 30px;
+  /* padding-bottom: 22px; */
+}
+
+#tempsDuCiel {
+  padding-left: 5px;
+}
+.logoEtCiel {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 10px;
+  line-height: 30px;
+  padding-right: 10px;
+}
+
+/*Temperature*/
+#temperature {
+  font-size: 80px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  /* line-height: 5px; */
+  margin: 0;
+  padding-top: 14px;
+}
+
+#coucherDuSoleil {
+  padding-left: 20px;
+}
+/*Nom de la ville*/
+#nomDeVille {
+  margin: 0;
+  font-size: 20px;
+  height: 5px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#pays {
+  font-size: 20px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*Bouton et champs ou rentrer la ville */
+.zoneBouton {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  padding-left: 20px;
+}
+/* zone ou on va saisir le nom de la ville */
+input {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  height: 32px;
+  border: none;
+  background-color: rgb(202, 202, 202);
+  font-weight: 600;
+}
+button {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 34px;
+  border: none;
+  background-color: rgb(225, 221, 221);
+}
+
+button:hover {
+  background-color: rgb(254, 250, 250);
+}
+/* Titre (T max T min et 3 prochain jours */
+.titre {
+  background-color: rgb(119, 103, 122);
+  display: flex;
+  gap: 60px;
+  min-width: 1210px;
+  padding-left: 55px;
+}
+
+/*******************************
+
+
+
+
+/*******************************
+/*Container qui contient la temperature max et min */
+
+/*Btemperature min et max avec la meme class */
+.temperatureMinEtMax {
+  display: flex;
+  gap: 20px;
+}
+.temperatureMax {
+  display: flex;
+  gap: 20px;
+  padding-left: 40px;
+}
+
+.blocBasDeLaPage {
+  margin-left: 57px;
+}
+.meteoProchainJour {
+  padding-left: 140px;
+  display: flex;
+  gap: 30px;
+}
+/*******************************/
+
+/* taille des img */
+img {
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+}
+
+#imgMeteo {
+  width: 70px;
+  height: 70px;
+}
+/* bloc principal des detail */
+.blocDetailMeteo {
+  display: flex;
+  gap: 60px;
+  background-color: rgb(0, 0, 0, 0.4);
+  min-width: 1264px;
+}
+
+/* detail de la météo  avec la meme class */
+.detail {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding-left: 50px;
+  margin-top: 20px;
+}
+
+/* div qui prend les temperature min et max des prochain jour  */
+.prochainJour {
+  display: flex;
+  gap: 6px;
+}
+
+/* icone meteo prochain jour 1  */
+#iconJour1 img {
+  height: 70px;
+  width: 70px;
+}
+/* icone meteo prochain jour 2  */
+#iconJour2 img {
+  height: 70px;
+  width: 70px;
+}
+/* icone meteo prochain jour 3  */
+#iconJour3 img {
+  height: 70px;
+  width: 70px;
+}
+/* div qui aligne en colonne le jour, l'image et le temperature min et max  */
+.nextDay {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0px;
+  background-color: rgb(170, 166, 166, 0.5);
+  width: 120px;
+  height: 160px;
+  margin-top: 10px;
+  border-radius: 20px;
+  line-height: 0;
+  padding-bottom: 10px;
+}
+/* bloc de droite avec heure et jour et mois  */
+.blocDroiteJour {
+  background-color: rgb(0, 0, 0, 0.4);
+  width: 180px;
+  height: 100px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+  padding-top: 7px;
+  line-height: 0.7;
+}
+
+/* aligner la date et le mois  */
+.dateEtMois {
+  display: flex;
+  gap: 7px;
+  padding-bottom: 0px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+/* aligner letat du ciel et la temperature dans le bloc de gauche  */
+.temperatureEtEtatDuCiel {
+  display: flex;
+  gap: 30px;
+}
+
+.imgEtatDuCiel {
+  margin-top: 60px;
+}
+#jourAujourdhui {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* div qui va aligner en ligne le bloc du bas et celui du haut  */
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*  tout les texte en blanc  */
+h3,
+h2,
+h4,
+p {
+  color: white;
+}
+
+p {
+  font-size: 20px;
+}
+
+h2 {
+  padding-left: 240px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+#visibilite {
+  padding-left: 5px;
+}
+
+#chanceDePluie {
+  padding-left: 16px;
+}
+
+#vent {
+  padding-left: 40px;
+}
+
+#imgCiel {
+  height: 50px;
+  width: 50px;
+}
+.imgJour {
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 700px) {
+  .blocDetailMeteo {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .blocBasDeLaPage {
+    margin-left: 0px;
+  }
+  h2 {
+    display: none;
+  }
+
+  .titre {
+    display: flex;
+    flex-direction: column;
+    min-width: 50px;
+    gap: 0px;
+  
+    margin-top: 20px;
+  }
+
+  .temperatureMax {
+    padding-left: 0px;
+  }
+
+  .blocDetailMeteo {
+    min-width: 50px;
+ 
+  }
+
+  .nextDay {
+    display: flex;
+     width: 110px;
+  height: 150px;
+   
+  }
+
+  .blocDroiteJour {
+    display: none;
+  }
+
+
+  .meteoProchainJour {
+    padding-left: 0px;
+  justify-content: center;
+  align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+   
+  }
+}
