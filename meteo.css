@@ -5,6 +5,14 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
+
+  /* transition générale pour le fondu / zoom */
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* état pendant le changement de fond */
+body.bg-transition {
+  opacity: 0.4;
 }
 /* pour afficher en bas de la page le footer  */
 html,

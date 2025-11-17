@@ -9,25 +9,25 @@ async function recupMeteo(nomDeVille) {
   let latitude;
   let longitude;
 
-  // ✅ CORRECTION : Gestion d'erreur pour l'API key
-  let cleAPI;
-  try {
-    const responseKey = await fetch("/api/key");
+   // ✅ CORRECTION : Gestion d'erreur pour l'API key
+  let cleAPI = "2a9dd7b2922af41a39f1637eb94fe9d5";
+  // try {
+  //   const responseKey = await fetch("/api/key");
 
-    // Vérifier si la requête a réussi
-    if (!responseKey.ok) {
-      throw new Error(`Erreur API key: ${responseKey.status}`);
-    }
+  //   // Vérifier si la requête a réussi
+  //   if (!responseKey.ok) {
+  //     throw new Error(`Erreur API key: ${responseKey.status}`);
+  //   }
 
-    const dataKey = await responseKey.json();
-    cleAPI = dataKey.key;
+  //   const dataKey = await responseKey.json();
+  //   cleAPI = dataKey.key;
 
-    console.log("✅ Clé API récupérée");
-  } catch (error) {
-    console.error("❌ Impossible de récupérer la clé API:", error);
-    alert("Erreur de configuration. Veuillez réessayer plus tard.");
-    return;
-  }
+  //   console.log("✅ Clé API récupérée");
+  // } catch (error) {
+  //   console.error("❌ Impossible de récupérer la clé API:", error);
+  //   alert("Erreur de configuration. Veuillez réessayer plus tard.");
+  //   return;
+  // }
 
   try {
     let input = document.querySelector("input");
@@ -135,32 +135,41 @@ function conditionMeteo(dataMeteo) {
   let body = document.querySelector("body");
   let divCouleur = document.querySelector(".titre");
 
-  switch (dataMeteo.weather[0].main) {
-    case "Mist":
-      body.style.backgroundImage = "url('fond_ecran/brume.jpg')";
-      divCouleur.style.backgroundColor = "rgb(79, 108, 148)";
-      break;
-    case "Rain":
-      body.style.backgroundImage = "url('fond_ecran/pluie.jpg')";
-      divCouleur.style.backgroundColor = "rgb(29, 37, 37)";
-      break;
-    case "Clouds":
-      body.style.backgroundImage = "url('fond_ecran/nuageux.jpg')";
-      divCouleur.style.backgroundColor = "rgb(0, 63, 93)";
-      break;
-    case "Snow":
-      body.style.backgroundImage = "url('fond_ecran/neige.jpg')";
-      divCouleur.style.backgroundColor = "rgb(82, 112, 140)";
-      break;
-    case "Clear":
-      body.style.backgroundImage = "url('fond_ecran/soleil.jpg')";
-      divCouleur.style.backgroundColor = "rgb(131, 179, 202)";
-      break;
-    case "Thunderstorm":
-      body.style.backgroundImage = "url('fond_ecran/orage.jpg')";
-      divCouleur.style.backgroundColor = "rgb(140, 85, 139)";
-      break;
-  }
+  // lance le fondu / zoom
+  body.classList.add("bg-transition");
+
+  // délai pour laisser le temps de commencer le fondu avant de changer l'image
+  setTimeout(() => {
+    switch (dataMeteo.weather[0].main) {
+      case "Mist":
+        body.style.backgroundImage = "url('fond_ecran/brume.jpg')";
+        divCouleur.style.backgroundColor = "rgb(79, 108, 148)";
+        break;
+      case "Rain":
+        body.style.backgroundImage = "url('fond_ecran/pluie.jpg')";
+        divCouleur.style.backgroundColor = "rgb(29, 37, 37)";
+        break;
+      case "Clouds":
+        body.style.backgroundImage = "url('fond_ecran/nuageux.jpg')";
+        divCouleur.style.backgroundColor = "rgb(0, 63, 93)";
+        break;
+      case "Snow":
+        body.style.backgroundImage = "url('fond_ecran/neige.jpg')";
+        divCouleur.style.backgroundColor = "rgb(82, 112, 140)";
+        break;
+      case "Clear":
+        body.style.backgroundImage = "url('fond_ecran/soleil.jpg')";
+        divCouleur.style.backgroundColor = "rgb(131, 179, 202)";
+        break;
+      case "Thunderstorm":
+        body.style.backgroundImage = "url('fond_ecran/orage.jpg')";
+        divCouleur.style.backgroundColor = "rgb(140, 85, 139)";
+        break;
+    }
+
+    // retire la classe pour faire réapparaître en fondu
+    body.classList.remove("bg-transition");
+  }, 300); // tu peux ajuster ce délai (ms) si tu veux
 }
 
 function afficherMeteo(dataMeteo) {
