@@ -9,25 +9,27 @@ async function recupMeteo(nomDeVille) {
   let latitude;
   let longitude;
 
-   // ✅ CORRECTION : Gestion d'erreur pour l'API key
-  let cleAPI = "2a9dd7b2922af41a39f1637eb94fe9d5";
-  // try {
-  //   const responseKey = await fetch("/api/key");
 
-  //   // Vérifier si la requête a réussi
-  //   if (!responseKey.ok) {
-  //     throw new Error(`Erreur API key: ${responseKey.status}`);
-  //   }
 
-  //   const dataKey = await responseKey.json();
-  //   cleAPI = dataKey.key;
+  let cleAPI;
+  try {
+    const responseKey = await fetch("/api/key");
 
-  //   console.log("✅ Clé API récupérée");
-  // } catch (error) {
-  //   console.error("❌ Impossible de récupérer la clé API:", error);
-  //   alert("Erreur de configuration. Veuillez réessayer plus tard.");
-  //   return;
-  // }
+    // Vérifier si la requête a réussi
+    if (!responseKey.ok) {
+      throw new Error(`Erreur API key: ${responseKey.status}`);
+    }
+
+    const dataKey = await responseKey.json();
+    cleAPI = dataKey.key;
+
+    console.log("✅ Clé API récupérée");
+  } catch (error) {
+    console.error("❌ Impossible de récupérer la clé API:", error);
+    alert("Erreur de configuration. Veuillez réessayer plus tard.");
+    return;
+  }
+
 
   try {
     let input = document.querySelector("input");
