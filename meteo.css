@@ -1,5 +1,5 @@
 body {
-  background: url(fond_ecran/DEFAUT.jpg) no-repeat center fixed;
+  background: url(fond_ecran/DEFAUT.webp) no-repeat center fixed;
 
   /* Centre l'image horizontalement et verticalement */
   background-size: cover;
@@ -7,7 +7,7 @@ body {
   flex-direction: column;
 
   /* transition générale pour le fondu / zoom */
-transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 /* état pendant le changement de fond */
